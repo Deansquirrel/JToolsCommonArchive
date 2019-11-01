@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.yuansong.tools</groupId>
-  <artifactId>common</artifactId>
+  <artifactId>yuansong-jtools-common</artifactId>
   <version>0.0.1-RELEASE</version>
   <packaging>jar</packaging>
 
