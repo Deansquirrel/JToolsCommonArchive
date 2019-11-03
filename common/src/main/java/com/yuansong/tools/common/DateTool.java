@@ -36,6 +36,14 @@ public class DateTool {
 	}
 	
 	/***
+	 * 根据当前时间和默认日期格式，返回日期字符串
+	 * @return
+	 */
+	public String GetDateStr() {
+		return GetStr(new java.util.Date(),_dateFormat);
+	}
+	
+	/***
 	 * 根据日期和默认日期格式，返回日期字符串
 	 * @param date
 	 * @return
@@ -45,12 +53,28 @@ public class DateTool {
 	}
 	
 	/***
+	 * 根据当前时间和默认日期时间格式，返回日期字符串
+	 * @return
+	 */
+	public String GetDatetimeStr() {
+		return GetStr(new java.util.Date(),_datetimeFormat); 
+	}
+	
+	/***
 	 * 根据日期和默认日期时间格式，返回日期字符串
 	 * @param date
 	 * @return
 	 */
 	public String GetDatetimeStr(java.util.Date date) {
 		return GetStr(date,_datetimeFormat);
+	}
+	
+	/***
+	 * 根据当前时间和默认日期时间格式，返回日期字符串（含毫秒）
+	 * @return
+	 */
+	public String GetDatetimeWithMillionsecond() {
+		return GetStr(new java.util.Date(),_datetimeWithMillionsecondFormat);
 	}
 	
 	/***
