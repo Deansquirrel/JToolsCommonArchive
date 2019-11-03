@@ -4,7 +4,8 @@
 
   <groupId>com.yuansong.tools</groupId>
   <artifactId>yuansong-jtools-common</artifactId>
-  <version>0.0.1-RELEASE</version>
+  <!-- <version>0.0.1-RELEASE</version> -->
+  <version>0.0.2</version>
   <packaging>jar</packaging>
 
   <name>common</name>
@@ -75,6 +76,38 @@
 				</execution>    			
 			</executions>
 		</plugin>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-javadoc-plugin</artifactId>
+		    <version>3.1.1</version>
+		    <configuration>
+		        <encoding>UTF-8</encoding>
+		        <aggregate>true</aggregate>
+		        <charset>UTF-8</charset>
+		        <docencoding>UTF-8</docencoding>
+		    </configuration>
+		    <executions>
+		        <execution>
+		            <id>attach-javadocs</id>
+		            <goals>
+		                <goal>jar</goal>
+		            </goals>
+		        </execution>
+		    </executions>
+	    </plugin>
+	    <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-source-plugin</artifactId>
+		    <version>3.1.0</version>
+		    <executions>
+		        <execution>
+		            <id>attach-sources</id>
+		            <goals>
+		                <goal>jar</goal>
+		            </goals>
+		        </execution>
+		    </executions>
+	    </plugin>
     </plugins>
   </build> 
 </project>

@@ -10,67 +10,105 @@ import java.text.SimpleDateFormat;
  */
 public class DateTool {
 	
-	private DateTool() {}
-	
-	private static String _format = "yyyy-MM-dd HH:mm:ss";
-	
-	/***
-	 * 按默认格式返回当前日期时间字符串
-	 * @return
-	 */
-	public static String GetDateStr() {
-		return GetDateStr(new java.util.Date());
-	}
+	private String _defaultFormat = "yyyy-MM-dd HH:mm:ss.SSS";
+	private String _dateFormat = "yyyy-MM-dd";
+	private String _datetimeFormat = "yyyy-MM-dd HH:mm:ss";
+	private String _datetimeWithMillionsecondFormat = "yyyy-MM-dd HH:mm:ss.SSS";
 	
 	/***
-	 * 按默认格式返回指定日期时间字符串
-	 * @param date
-	 * @return
-	 */
-	public static String GetDateStr(java.util.Date date) {
-		return GetDateStr(date,_format);
-	}
-	
-	/***
-	 * 按指定格式返回当前日期时间字符串
-	 * @param format
-	 * @return
-	 */
-	public static String GetDateStr(String format) {
-		return GetDateStr(new java.util.Date(), format);
-	}
-	
-	/***
-	 * 根据指定格式返回日期时间字符串
+	 * 根据日期和指定格式，返回日期字符串
 	 * @param date
 	 * @param format
 	 * @return
 	 */
-	public static String GetDateStr(java.util.Date date,String format) {
+	public String GetStr(java.util.Date date,String format) {
 		SimpleDateFormat sdf=new SimpleDateFormat(format);
 		return sdf.format(date);
 	}
 	
 	/***
-	 * 根据字符串和按默认日志格式，返回日期
+	 * 根据日期和默认格式，返回日期字符串
 	 * @param date
 	 * @return
-	 * @throws ParseException
 	 */
-	public static java.util.Date GetDateFromStr(String date) throws ParseException{
-		SimpleDateFormat sdf=new SimpleDateFormat(_format);
-		return sdf.parse(date);
+	public String GetStr(java.util.Date date) {
+		return GetStr(date,_defaultFormat);
 	}
 	
 	/***
-	 * 根据字符串和指定的日期格式，返回日期
+	 * 根据日期和默认日期格式，返回日期字符串
+	 * @param date
+	 * @return
+	 */
+	public String GetDateStr(java.util.Date date) {
+		return GetStr(date,_dateFormat);
+	}
+	
+	/***
+	 * 根据日期和默认日期时间格式，返回日期字符串
+	 * @param date
+	 * @return
+	 */
+	public String GetDatetimeStr(java.util.Date date) {
+		return GetStr(date,_datetimeFormat);
+	}
+	
+	/***
+	 * 根据日期和默认日期时间格式，返回日期字符串（含毫秒）
+	 * @param date
+	 * @return
+	 */
+	public String GetDatetimeWithMillionsecond(java.util.Date date) {
+		return GetStr(date,_datetimeWithMillionsecondFormat);
+	}
+	
+	/***
+	 * 根据日期字符串和指定格式，返回日期
 	 * @param date
 	 * @param format
 	 * @return
 	 * @throws ParseException
 	 */
-	public static java.util.Date GetDateFromStr(String date,String format) throws ParseException{
+	public java.util.Date ParseStr(String date,String format) throws ParseException{
 		SimpleDateFormat sdf=new SimpleDateFormat(format);
 		return sdf.parse(date);
+	}
+	
+	/***
+	 * 根据日期字符串和默认格式，返回日期
+	 * @param date
+	 * @return
+	 * @throws ParseException
+	 */
+	public java.util.Date ParseStr(String date) throws ParseException{
+		return ParseStr(date,_defaultFormat);
+	}
+	/***
+	 * 根据日期字符串和默认日期格式，返回日期
+	 * @param date
+	 * @return
+	 * @throws ParseException
+	 */
+	public java.util.Date ParseDateStr(String date) throws ParseException{
+		return ParseStr(date,_dateFormat);
+	}
+	/***
+	 * 根据日期字符串和默认日期时间格式，返回日期
+	 * @param date
+	 * @return
+	 * @throws ParseException
+	 */
+	public java.util.Date ParseDatetimeStr(String date) throws ParseException{
+		return ParseStr(date,_datetimeFormat);
+	}
+	
+	/***
+	 * 根据日期字符串和默认日期时间格式，返回日期（含毫秒）
+	 * @param date
+	 * @return
+	 * @throws ParseException
+	 */
+	public java.util.Date ParseDatetimeWithMillionsecond(String date) throws ParseException{
+		return ParseStr(date,_datetimeWithMillionsecondFormat);
 	}
 }
