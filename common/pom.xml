@@ -5,7 +5,7 @@
   <groupId>com.yuansong.tools</groupId>
   <artifactId>yuansong-jtools-common</artifactId>
   <!-- <version>0.0.4</version> -->
-  <version>0.0.0</version>
+  <version>0.0.5</version>
   <packaging>jar</packaging>
 
   <name>common</name>
@@ -22,7 +22,7 @@
         <url>https://raw.github.com/deansquirrel/maven-jrepository/master</url>
     </repository>
   </repositories>
-
+ 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
