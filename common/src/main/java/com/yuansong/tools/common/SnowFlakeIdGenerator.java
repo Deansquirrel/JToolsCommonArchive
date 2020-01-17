@@ -127,6 +127,6 @@ public class SnowFlakeIdGenerator {
      * @return 以毫秒为单位的当前时间
      */
     protected long getTimeStamp() {
-        return System.currentTimeMillis() /1000;
+        return System.currentTimeMillis();
     }
 }
