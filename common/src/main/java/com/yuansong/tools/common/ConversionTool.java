@@ -14,6 +14,9 @@ public class ConversionTool {
 	 * @return
 	 */
 	public java.util.Date ConvertSqlDateToUtilDate(java.sql.Date date){
+		if(date == null) {
+			return null;
+		}
 		return new java.util.Date(date.getTime());
 	}
 	
@@ -23,6 +26,9 @@ public class ConversionTool {
 	 * @return
 	 */
 	public java.sql.Date ConvertUtilDateToSqlDate(java.util.Date date){
+		if(date == null) {
+			return null;
+		}
 		return new java.sql.Date(date.getTime());
 	}
 }
