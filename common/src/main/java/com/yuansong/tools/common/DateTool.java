@@ -22,6 +22,9 @@ public class DateTool {
 	 * @return
 	 */
 	public String GetStr(java.util.Date date,String format) {
+		if(date == null || format == null || format.trim() == "") {
+			return null;
+		}
 		SimpleDateFormat sdf=new SimpleDateFormat(format);
 		return sdf.format(date);
 	}
@@ -32,6 +35,9 @@ public class DateTool {
 	 * @return
 	 */
 	public String GetStr(java.util.Date date) {
+		if(date == null) {
+			return null;
+		}
 		return GetStr(date,_defaultFormat);
 	}
 	
@@ -49,6 +55,9 @@ public class DateTool {
 	 * @return
 	 */
 	public String GetDateStr(java.util.Date date) {
+		if(date == null) {
+			return null;
+		}
 		return GetStr(date,_dateFormat);
 	}
 	
@@ -66,6 +75,9 @@ public class DateTool {
 	 * @return
 	 */
 	public String GetDatetimeStr(java.util.Date date) {
+		if(date == null) {
+			return null;
+		}
 		return GetStr(date,_datetimeFormat);
 	}
 	
@@ -83,6 +95,9 @@ public class DateTool {
 	 * @return
 	 */
 	public String GetDatetimeWithMillionsecond(java.util.Date date) {
+		if(date == null) {
+			return null;
+		}
 		return GetStr(date,_datetimeWithMillionsecondFormat);
 	}
 	
@@ -94,6 +109,9 @@ public class DateTool {
 	 * @throws ParseException
 	 */
 	public java.util.Date ParseStr(String date,String format) throws ParseException{
+		if(date == null || format == null || format.trim() == "") {
+			return null;
+		}
 		SimpleDateFormat sdf=new SimpleDateFormat(format);
 		return sdf.parse(date);
 	}
@@ -105,6 +123,9 @@ public class DateTool {
 	 * @throws ParseException
 	 */
 	public java.util.Date ParseStr(String date) throws ParseException{
+		if(date == null) {
+			return null;
+		}
 		return ParseStr(date,_defaultFormat);
 	}
 	/***
@@ -114,6 +135,9 @@ public class DateTool {
 	 * @throws ParseException
 	 */
 	public java.util.Date ParseDateStr(String date) throws ParseException{
+		if(date == null) {
+			return null;
+		}
 		return ParseStr(date,_dateFormat);
 	}
 	/***
@@ -123,6 +147,9 @@ public class DateTool {
 	 * @throws ParseException
 	 */
 	public java.util.Date ParseDatetimeStr(String date) throws ParseException{
+		if(date == null) {
+			return null;
+		}
 		return ParseStr(date,_datetimeFormat);
 	}
 	
@@ -133,6 +160,9 @@ public class DateTool {
 	 * @throws ParseException
 	 */
 	public java.util.Date ParseDatetimeWithMillionsecond(String date) throws ParseException{
+		if(date == null) {
+			return null;
+		}
 		return ParseStr(date,_datetimeWithMillionsecondFormat);
 	}
 }
